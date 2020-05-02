@@ -30,4 +30,4 @@ jobs:
       with:
         app-name: 'tcsproject'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_537a4f5df2cf4ac299e20ef9bc4b23bd }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_79b4c4880ba14e179b5a2853439285a8 }}
