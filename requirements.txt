@@ -5,3 +5,4 @@ pandas
 statsmodels
 pmdarima
 scikit-learn
+gunicorn
