@@ -45,7 +45,7 @@ def predict():
     y = np.round(y,2)
     if int_features == 1:
         output = y[0]
-        return render_template('index.html', prediction_text=graph_title+' stock price will be Rs. {}'.format(output), l=0)
+        return render_template('index.html', prediction_text=graph_title+' stock price is expected to be Rs. {}'.format(output), l=0)
     prediction = y[int_features-1]
     nod = int_features
     dateparse = lambda dates: pd.datetime.strptime(dates, '%d-%m-%Y')
@@ -62,7 +62,7 @@ def predict():
     s = pd.Series(i for i in range(1,nod+1))
     df.set_index(s)
     
-    return render_template('index.html', prediction_text=graph_title + ' stock price will be Rs. {}'.format(prediction), tables=[df.to_html(classes='data')], titles=df.columns.values, vs_text = "Click here to visualize", l=1)
+    return render_template('index.html', prediction_text=graph_title + ' stock price is expected to be Rs. {}'.format(prediction), tables=[df.to_html(classes='data')], titles=df.columns.values, vs_text = "Click here to visualize", l=1)
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
