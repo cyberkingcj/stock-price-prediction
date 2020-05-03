@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
   <title>Stock Price Prediction</title>
@@ -18,13 +17,16 @@
   
 	<h1>Predicting Stock Prices</h1>
 
-     <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
       <label for="company">Choose a company:</label>
       <select name="company" class="btn btn-block btn-large">
-        <option value="" disbled selected hidden>Select the company you want to predict for</option>
+        <option value="error" disbled selected hidden>Select the company you want to predict for</option>
         <option value="TCS">TCS - Tata Consultancy Services</option>
         <option value="INFY">Infosys</option>
+        <option value="Cipla">Cipla</option>
+        <option value="Lupin">Lupin Phatmaceuticals</option>
+        <option value="TM">Tata Motors</option>
+        <option value="FM">Force Motors</option>
         <option disabled class="comingsoon">More options coming soon</option>
       </select>
 
@@ -38,14 +40,13 @@
    
     <table  style="overflow:scroll;">
       
-      <!-- {{ date }}-->
+      {{ error }}
       <br>
       {{ prediction_text }}
       <br>
 
       
       
-      <!--<!->><img src = "{{url_for('static',filename='Graph.png')}}"></center>-->
       <table id='table1'>
         {% for table in tables %}
                 <tr>
