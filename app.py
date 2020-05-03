@@ -46,7 +46,7 @@ def predict():
     if int_features == 1:
         output = y[0]
         return render_template('index.html', prediction_text=graph_title+' stock price will be Rs. {}'.format(output), l=0)
-        prediction = y[int_features-1]
+    prediction = y[int_features-1]
     nod = int_features
     dateparse = lambda dates: pd.datetime.strptime(dates, '%d-%m-%Y')
     dates = pd.read_csv('future_dates.csv', parse_dates=['Date'], date_parser=dateparse)
